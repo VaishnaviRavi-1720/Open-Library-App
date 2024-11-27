@@ -1,0 +1,27 @@
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-right: 2px solid #ccc;
+  height: 100vh;
+  width: 200px;
+}
+
+.header-container a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.header-container a:hover {
+  color: #0056b3;
+}
+
+.header-container .active-link {
+  font-weight: bold;
+  color: #0056b3;
+}

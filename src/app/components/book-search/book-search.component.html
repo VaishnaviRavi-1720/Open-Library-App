@@ -1,0 +1,35 @@
+<!-- src/app/book-search/book-search.component.html -->
+<div class="book-search-container">
+  <h1>Book Search</h1>
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    placeholder="Search for books"
+    (keyup.enter)="onSearch()"
+  />
+  <button (click)="onSearch()" [disabled]="loading">Search</button><p></p>
+
+
+  <div *ngIf="loading" class="loading-spinner">Loading...</div>
+
+  <div *ngIf="!loading && books.length === 0" class="no-results">
+    No results found.
+  </div>
+
+  <div *ngIf="!loading && books.length > 0" class="results-container">
+    <div *ngFor="let book of books" class="book-card">
+      <img *ngIf="book.cover_i" [src]="getCoverImage(book.cover_i)" alt="Cover Image" />
+      <div class="book-info">
+        <h3>{{ book.title }}</h3>
+        <p><strong>Author:</strong> {{ book.author_name?.join(', ') }}</p>
+        <p><strong>First Published:</strong> {{ book.first_publish_year }}</p>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div *ngIf="totalBooks > 10" class="pagination">
+      <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage <= 1">Previous</button>
+      <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage * 10 >= totalBooks">Next</button>
+    </div>
+  </div>
+</div>

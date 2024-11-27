@@ -1,0 +1,26 @@
+<!-- src/app/components/work-edition/work-edition.component.html -->
+<div *ngIf="loading">Loading...</div>
+
+<div *ngIf="!loading && workDetails">
+  <h2>{{ workDetails.title }}</h2>
+  <p>{{ workDetails.description || 'No description available.' }}</p>
+  <div *ngIf="workDetails.authors">
+    <h3>Authors</h3>
+    <ul>
+      <li *ngFor="let author of workDetails.authors">{{ author.name }}</li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="!loading && editions.length > 0">
+  <h3>Available Editions:</h3>
+  <ul>
+    <li *ngFor="let edition of editions">
+      <a [href]="'/books/' + edition.key">{{ edition.title }}</a>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!loading && editions.length === 0">
+  <p>No editions available for this work.</p>
+</div>

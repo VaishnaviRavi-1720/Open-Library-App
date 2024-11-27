@@ -1,0 +1,29 @@
+/* src/app/components/work-edition/work-edition.component.css */
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  li {
+    margin: 5px 0;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

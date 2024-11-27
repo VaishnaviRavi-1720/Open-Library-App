@@ -1,0 +1,55 @@
+/* src/app/book-search/book-search.component.css */
+.book-search-container {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  padding: 8px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.results-container {
+  margin-top: 20px;
+}
+
+.book-card {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.book-card img {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.book-info {
+  flex: 1;
+  margin-left: 10px;
+  text-align: left;
+}
+
+.pagination button {
+  margin: 5px;
+}
+
+.loading-spinner {
+  font-size: 18px;
+  color: #888;
+}
+
+.no-results {
+  font-size: 18px;
+  color: #888;
+}

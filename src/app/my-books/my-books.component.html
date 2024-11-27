@@ -1,0 +1,43 @@
+<!-- my-books.component.html -->
+<div class="book-category">
+    <h2>Want to Read</h2>
+    <div *ngIf="wantToReadBooks.length > 0; else noWantToReadBooks">
+      <div *ngFor="let book of wantToReadBooks">
+        <h4>{{ book.work.title }}</h4>
+        <p>By: {{ book.work.author_names.join(', ') }}</p>
+        <p>First Published: {{ book.work.first_publish_year }}</p>
+      </div>
+    </div>
+    <ng-template #noWantToReadBooks>
+      <p>No books in the Want to Read list.</p>
+    </ng-template>
+  </div>
+
+  <div class="book-category">
+    <h2>Currently Reading</h2>
+    <div *ngIf="currentlyReadingBooks.length > 0; else noCurrentlyReadingBooks">
+      <div *ngFor="let book of currentlyReadingBooks">
+        <h4>{{ book.work.title }}</h4>
+        <p>By: {{ book.work.author_names.join(', ') }}</p>
+        <p>First Published: {{ book.work.first_publish_year }}</p>
+      </div>
+    </div>
+    <ng-template #noCurrentlyReadingBooks>
+      <p>No books in the Currently Reading list.</p>
+    </ng-template>
+  </div>
+  
+  <div class="book-category">
+    <h2>Already Read</h2>
+    <div *ngIf="alreadyReadBooks.length > 0; else noAlreadyReadBooks">
+      <div *ngFor="let book of alreadyReadBooks">
+        <h4>{{ book.work.title }}</h4>
+        <p>By: {{ book.work.author_names.join(', ') }}</p>
+        <p>First Published: {{ book.work.first_publish_year }}</p>
+      </div>
+    </div>
+    <ng-template #noAlreadyReadBooks>
+      <p>No books in the Already Read list.</p>
+    </ng-template>
+  </div>
+  
