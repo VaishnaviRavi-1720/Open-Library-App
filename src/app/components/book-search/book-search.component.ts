@@ -14,8 +14,7 @@ export class BookSearchComponent {
   loading: boolean = false;
 
   constructor(private openLibraryService: OpenLibraryService) {}
-
-  // Method to handle the search logic
+  
   onSearch(): void { 
     if (this.searchQuery.trim() === '') {
       return;
@@ -33,17 +32,12 @@ export class BookSearchComponent {
       }
     );
   }
-
-  // Method for pagination (next and previous pages)
   onPageChange(page: number): void { 
 
     this.currentPage = page;
     this.onSearch();
   }
-
-  // Method to get the book cover image URL
   getCoverImage(coverId: number): string { 
     return this.openLibraryService.getCoverImage(coverId);
   }
 }
-// write a angular unit test cases based on above methods where a particular method for particular purpose 

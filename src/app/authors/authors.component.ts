@@ -29,10 +29,8 @@ export class AuthorsComponent implements OnInit {
     );
   }
 
-  // Method to find the author's name by authorKey
   getAuthorNameByKey(authorKey: string): string {
     const author = this.authors.find((a) => a.key === authorKey);
     return author ? author.name : 'Unknown Author';
   }
 }
-// write the angular test case for this for this methods 

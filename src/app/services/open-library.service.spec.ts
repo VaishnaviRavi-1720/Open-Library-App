@@ -2,9 +2,6 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { OpenLibraryService } from './open-library.service';
 
-describe('SearchBooks',()=>{
-})
-
 describe('OpenLibraryService', () => {
   let service: OpenLibraryService;
   let httpMock: HttpTestingController;

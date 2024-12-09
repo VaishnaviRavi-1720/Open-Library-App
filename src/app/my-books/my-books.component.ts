@@ -18,7 +18,6 @@ export class MyBooksComponent implements OnInit {
   }
 
   fetchBooks(): void {
-    // Fetch books in the "Want to Read" category
     this.openLibraryService.getWantToReadBooks().subscribe(
       (data: any) => {
         this.wantToReadBooks = data.books || [];
@@ -28,7 +27,6 @@ export class MyBooksComponent implements OnInit {
       }
     );
 
-    // Fetch books in the "Currently Reading" category
     this.openLibraryService.getCurrentlyReadingBooks().subscribe(
       (data: any) => {
         this.currentlyReadingBooks = data.books || [];
@@ -38,7 +36,6 @@ export class MyBooksComponent implements OnInit {
       }
     );
 
-    // Fetch books in the "Already Read" category
     this.openLibraryService.getAlreadyReadBooks().subscribe(
       (data: any) => {
         this.alreadyReadBooks = data.books || [];
@@ -49,4 +46,3 @@ export class MyBooksComponent implements OnInit {
     );
   }
 }
-// for this write Angular Test Cases based on abouve thing in my-books.component.spec.ts

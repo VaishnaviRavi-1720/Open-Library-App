@@ -23,12 +23,10 @@ describe('BookSearchComponent', () => {
     fixture.detectChanges();
   });
 
-  // Test: Ensure component creation
   it('should create the component', () => {
     expect(component).toBeTruthy();
   });
 
-  // Test: onSearch method - successful search
   it('should fetch books and update the component state on successful search', () => {
     const mockResponse = {
       docs: [{ title: 'Test Book', author_name: ['Author'], cover_i: 123 }],
@@ -45,7 +43,6 @@ describe('BookSearchComponent', () => {
     expect(component.loading).toBeFalse();
   });
 
-  // Test: onSearch method - empty query
   it('should not fetch books if search query is empty', () => {
     component.searchQuery = '   ';
     component.onSearch();
@@ -55,7 +52,6 @@ describe('BookSearchComponent', () => {
     expect(component.totalBooks).toBe(0);
   });
 
-  // Test: onSearch method - error handling
   it('should handle errors from the service gracefully', () => {
     mockService.searchBooks.and.returnValue(throwError('Error occurred'));
     
@@ -68,7 +64,6 @@ describe('BookSearchComponent', () => {
     expect(component.loading).toBeFalse();
   });
 
-  // Test: onPageChange method
   it('should update the page and call the onSearch method', () => {
     spyOn(component, 'onSearch'); // Spy on the onSearch method
 
@@ -78,7 +73,6 @@ describe('BookSearchComponent', () => {
     expect(component.onSearch).toHaveBeenCalled();
   });
 
-  // Test: getCoverImage method
   it('should return the correct cover image URL', () => {
     mockService.getCoverImage.and.returnValue('https://covers.openlibrary.org/b/id/123-L.jpg');
     

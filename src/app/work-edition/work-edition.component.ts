@@ -19,27 +19,23 @@ export class WorkEditionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Subscribe to route parameters to get the workId
     this.route.paramMap.subscribe(params => {
-      this.workId = params.get('workId') || '';  // Get workId from the route
-      this.getWorkDetails();  // Fetch work details
+      this.workId = params.get('workId') || ''; 
+      this.getWorkDetails(); 
     });
   }
 
-  // Fetch work details and editions from the OpenLibrary service
   getWorkDetails(): void {
     this.openLibraryService.getWorkDetails(this.workId).subscribe((response) => {
-      this.workDetails = response;  // Handle the response with work details
-      this.getEditions(); // Get editions of this work
+      this.workDetails = response;
+      this.getEditions();
     });
   }
 
-  // Fetch editions of the work from the OpenLibrary service
   getEditions(): void {
     this.openLibraryService.getEditions(this.workId).subscribe((response) => {
-      this.editions = response; // Handle the response with editions
+      this.editions = response;
       this.loading = false;
     });
   }
 }
-// for this following methods write a angular test cases in work-edition.component.spec.ts

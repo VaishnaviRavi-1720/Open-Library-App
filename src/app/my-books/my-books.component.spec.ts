@@ -26,12 +26,10 @@ describe('MyBooksComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-  // Test: Component creation
   it('should create the component', () => {
     expect(component).toBeTruthy();
   });
 
-  // Test: Fetch "Want to Read" books successfully
   it('should fetch "Want to Read" books and update the state', () => {
     const mockBooks = { books: [{ title: 'Book 1' }, { title: 'Book 2' }] };
     mockService.getWantToReadBooks.and.returnValue(of(mockBooks));
@@ -42,7 +40,6 @@ describe('MyBooksComponent', () => {
     expect(component.wantToReadBooks).toEqual(mockBooks.books);
   });
 
-  // Test: Handle error in fetching "Want to Read" books
   it('should handle errors when fetching "Want to Read" books', () => {
     mockService.getWantToReadBooks.and.returnValue(throwError('Error occurred'));
 
@@ -52,7 +49,6 @@ describe('MyBooksComponent', () => {
     expect(component.wantToReadBooks).toEqual([]);
   });
 
-  // Test: Fetch "Currently Reading" books successfully
   it('should fetch "Currently Reading" books and update the state', () => {
     const mockBooks = { books: [{ title: 'Book 3' }, { title: 'Book 4' }] };
     mockService.getCurrentlyReadingBooks.and.returnValue(of(mockBooks));
@@ -63,7 +59,6 @@ describe('MyBooksComponent', () => {
     expect(component.currentlyReadingBooks).toEqual(mockBooks.books);
   });
 
-  // Test: Handle error in fetching "Currently Reading" books
   it('should handle errors when fetching "Currently Reading" books', () => {
     mockService.getCurrentlyReadingBooks.and.returnValue(throwError('Error occurred'));
 
@@ -73,7 +68,6 @@ describe('MyBooksComponent', () => {
     expect(component.currentlyReadingBooks).toEqual([]);
   });
 
-  // Test: Fetch "Already Read" books successfully
   it('should fetch "Already Read" books and update the state', () => {
     const mockBooks = { books: [{ title: 'Book 5' }, { title: 'Book 6' }] };
     mockService.getAlreadyReadBooks.and.returnValue(of(mockBooks));
@@ -84,7 +78,6 @@ describe('MyBooksComponent', () => {
     expect(component.alreadyReadBooks).toEqual(mockBooks.books);
   });
 
-  // Test: Handle error in fetching "Already Read" books
   it('should handle errors when fetching "Already Read" books', () => {
     mockService.getAlreadyReadBooks.and.returnValue(throwError('Error occurred'));
 
